@@ -725,7 +725,7 @@ def render_app():
         process_btn = st.button(" Process Files", use_container_width=True)
         if st.session_state.vectorstore:
             st.markdown(
-                f'<div style="margin-top:6px"><span class="badge badge-green">✓ READY</span> '
+                f'<div style="margin-top:6px"><span class="badge badge-green"> READY</span> '
                 f'<span class="badge badge-blue">{st.session_state.total_chunks} chunks</span></div>',
                 unsafe_allow_html=True,
             )
@@ -800,7 +800,7 @@ def render_app():
 
     st.markdown(
         f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:1rem;flex-wrap:wrap;">'
-        f'<span class="badge badge-green">✓ READY</span>'
+        f'<span class="badge badge-green"> READY</span>'
         f'<span class="badge badge-blue">FAISS+BM25 · {st.session_state.total_chunks} chunks</span>'
         f'<span class="badge badge-orange">{cfg["chunk_strategy"]}</span>'
         f'{active_badges}'
