@@ -883,7 +883,7 @@ def render_app():
                 f'</div>',
                 unsafe_allow_html=True,
             )
-            with st.expander(f"📎 Source chunks — Q{q_num}"):
+            with st.expander(f" Source chunks — Q{q_num}"):
                 for j, chunk in enumerate(item.get("chunks", [])):
                     rs        = chunk.get("rerank_score")
                     score_tag = f'<span class="rerank-score">rerank: {rs}</span>' if rs is not None else ""
