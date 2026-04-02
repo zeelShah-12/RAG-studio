@@ -663,7 +663,7 @@ def render_sidebar():
 
         st.markdown('<div class="sidebar-section"> Level 1 — Retrieval</div>', unsafe_allow_html=True)
         top_k      = st.slider("Top K pool", 5, 30, DEFAULT_TOP_K, 1)
-        use_hybrid = st.toggle("⚡ Hybrid Search (BM25 + Vector)", value=True)
+        use_hybrid = st.toggle(" Hybrid Search (BM25 + Vector)", value=True)
         bm25_w     = st.slider("BM25 weight", 0.1, 0.9, DEFAULT_BM25_WEIGHT, 0.05, disabled=not use_hybrid)
         use_rerank = st.toggle(" Cross-Encoder Reranker", value=True)
         rerank_top = st.slider("Chunks after rerank", 1, 10, DEFAULT_RERANK_TOP, 1, disabled=not use_rerank)
@@ -792,11 +792,11 @@ def render_app():
     # Status row
     files_str     = " · ".join(st.session_state.processed_files)
     active_badges = ""
-    if cfg["use_hybrid"]:       active_badges += '<span class="badge badge-blue">⚡ Hybrid</span> '
-    if cfg["use_rerank"]:       active_badges += '<span class="badge badge-purple">🏆 Reranker</span> '
-    if cfg["use_hyde"]:         active_badges += '<span class="badge badge-purple">🧠 HyDE</span> '
-    if cfg["use_multiquery"]:   active_badges += '<span class="badge badge-purple">🔀 Multi-Q</span> '
-    if cfg["use_parent_child"]: active_badges += '<span class="badge badge-orange">🌲 P-C</span> '
+    if cfg["use_hybrid"]:       active_badges += '<span class="badge badge-blue"> Hybrid</span> '
+    if cfg["use_rerank"]:       active_badges += '<span class="badge badge-purple"> Reranker</span> '
+    if cfg["use_hyde"]:         active_badges += '<span class="badge badge-purple"> HyDE</span> '
+    if cfg["use_multiquery"]:   active_badges += '<span class="badge badge-purple"> Multi-Q</span> '
+    if cfg["use_parent_child"]: active_badges += '<span class="badge badge-orange"> P-C</span> '
 
     st.markdown(
         f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:1rem;flex-wrap:wrap;">'
